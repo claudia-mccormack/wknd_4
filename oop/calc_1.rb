@@ -15,60 +15,46 @@
 class SimpleCalculator
 attr_accessor :first_number, :second_number
   def initialize(numbers)
-    @first_number = numbers[:first_number],
+    @first_number = numbers[:first_number]
     @second_number = numbers[:second_number]
   end
 
-
-  def add(first_number, second_number)
-    first_number + second_number
+  def add
+    @first_number + @second_number
   end
 
-  def subtract(first_number, second_number)
-    first_number - second_number
+  def subtract
+    @first_number - @second_number
   end
 
-  def multiply(first_number, second_number)
-    first_number * second_number
+  def multiply
+    @first_number * @second_number
   end
 
-  def divide(first_number, second_number)
-    first_number / second_number
+  def divide
+    @first_number / @second_number
   end
-
+#
 end
 
 class FancyCalculator < SimpleCalculator
 def initialize(numbers)
-  super
-  @number = numbers[:number]
+  super(numbers)
+  @third_number = numbers[:third_number]
 end
-  # def add(first_number, second_number)
-  #   first_number + second_number
-  # end
-  #
-  # def subtract(first_number, second_number)
-  #   first_number - second_number
-  # end
-  #
-  # def multiply(first_number, second_number)
-  #   first_number * second_number
-  # end
-  #
-  # def divide(first_number, second_number)
-  #   first_number / second_number
-  # end
 
-  def square_root(number)
-    Math.sqrt(number)
-
+  def square_root
+    Math.sqrt(@third_number)
   end
 
 end
 
 # Write your own driver code below:
 
-calc = FancyCalculator.new(numbers)
+calc = FancyCalculator.new(first_number: 6, second_number: 2, third_number: 12)
 
-puts calc.add(2, 3)
-puts calc.subtract(3, 2)
+puts "6 + 2 = #{calc.add.to_s}"
+puts "6 - 2 = #{calc.subtract.to_s}"
+puts "6 x 2 = #{calc.multiply.to_s}"
+puts "6 / 2 = #{calc.divide.to_s}"
+puts "The square root of 12 is #{calc.square_root.to_s}"

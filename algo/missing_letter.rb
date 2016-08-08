@@ -9,7 +9,7 @@ def find_missing_letter(range)
   comp_range = (a..b).to_a
   output_range = []
   comp_range.each do |letter|
-    if input_range.include?(letter) == false
+    if !input_range.include?(letter)
       output_range << letter
     end
   end
