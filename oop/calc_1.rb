@@ -34,7 +34,6 @@ attr_accessor :first_number, :second_number
   def divide
     @first_number / @second_number
   end
-#
 end
 
 class FancyCalculator < SimpleCalculator
@@ -46,7 +45,6 @@ end
   def square_root
     Math.sqrt(@third_number)
   end
-
 end
 
 # Write your own driver code below:
