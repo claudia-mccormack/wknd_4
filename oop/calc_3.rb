@@ -54,9 +54,7 @@ include FancyCalculator
   end
 
   def exponent
-    @total = 1
-    @exponent_number.times { total = multiply(@total,@first_number) }
-    total
+    @first_number ** @exponent_number
   end
 end
 
